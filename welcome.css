@@ -1,0 +1,47 @@
+html{
+    scroll-behavior: smooth;
+}
+.naitem {
+    color: black;
+    text-decoration: none;
+}
+
+.naitem:hover {
+    text-decoration: underline rgb(255, 209, 2);
+    text-decoration-thickness: 5px;
+}
+
+.nav2 {
+    color: black;
+    font-size: 1.2em;
+    display: inline;
+}
+
+.scrollbar {
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+
+.showp {
+    transition: 0.2s linear;
+}
+
+.showp:hover {
+    transform: scale(0.99);
+    opacity: 0.9;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cardtxt {
+    line-height: 0.8;
+    font-size: smaller;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.footp {
+    line-height: 0.3;
+    font-size: small;
+}
