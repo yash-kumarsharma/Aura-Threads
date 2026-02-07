@@ -1,9 +1,12 @@
-html{
+html {
     scroll-behavior: smooth;
 }
+
 .naitem {
     color: black;
     text-decoration: none;
+    margin-left: 10px;
+    align-items: center;
 }
 
 .naitem:hover {
@@ -44,4 +47,30 @@ html{
 .footp {
     line-height: 0.3;
     font-size: small;
+}
+
+/* search box css starts from here */
+
+#sugglist {
+    position: absolute;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: white;
+    width: 200px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: small;
+    scrollbar-width: none;
+}
+
+#sugglist .list-group-item {
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+#sugglist .list-group-item:hover {
+    background-color: #f1f1f1;
 }

@@ -1,334 +1,118 @@
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <h1 class="text-center">Bewakoof</h1>
-            <form id="loginForm">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter username">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter password">
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
-        </div>
-    </div>
-</div>
-
-old navbar
-<div class="container-sm bg-secondary">
-    <ul class="navbar-nav p-3 align-content-sm-start">
-        <li class="nav-item navbar-brand mx-2 ">
-            <a href="#"  ><img src="C:\Users\Yash\OneDrive\Pictures\Screenshots\Screenshot 2024-08-31 181126.png" alt="Bewakoof"></a>
-        </li>
-        <li class="nav-item pt-2  mx-2 px-2">
-            <a href="#"  class="nav-link naitem">MEN</a>
-        </li>
-        <li class="nav-item pt-2 mx-2">
-            <a href="#" class="nav-link">
-                <i class='bx bx-heart'></i>
-            </a>
-        </li>
-        <li class="nav-item pt-2  mx-2 px-2">
-            <a href="#" class="nav-link naitem" >WOMEN</a>
-        </li>
-        <li class="nav-item pt-2 mx-2 ">
-            <a href="#"  class="nav-link naitem">MOBILE COVERS</a>
-        </li>
-        <li class="nav-tem pt-2 mx-2">
-            <a href="#" class="nav-link" style="color: black;">LOGIN </a>
-        </li>
-    </ul>
-</div>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <title>Bewakoof</title>
+    <title>Shopping Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .nav-link {
-            color: black;
-            text-decoration: none;
+        .cart-item img {
+            max-width: 100px;
         }
-        .nav-link:hover {
-            text-decoration: underline rgb(255, 209, 2);
-            text-decoration-thickness: 5px;
-        }
-        .nav-item-custom {
-            color: black;
-            font-size: large;
-            display: inline;
-        }
-        .scrollbar {
-            overflow-x: auto;
-            white-space: nowrap;
-            scrollbar-width: none; /* Firefox */
-        }
-        .scrollbar::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, and Opera */
+        .cart-total {
+            font-size: 1.5rem;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-white text-black">
-        <div class="container d-flex">
-            <div class="d-flex justify-content-start">
-                <ul class="navbar-nav">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Your Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="#"><img src="img.png" alt="Bewakoof"></a>
+                        <a href="index.html" class="nav-link">Home</a>
                     </li>
-                    <li class="nav-item mx-2 p-sm-2">
-                        <a href="#" class="nav-link nav-item-custom">MEN</a>
+                    <li class="nav-item">
+                        <a href="cart_page.html" class="nav-link active">Cart</a>
                     </li>
-                    <li class="nav-item mx-2 p-sm-2">
-                        <a href="#" class="nav-link nav-item-custom">WOMEN</a>
-                    </li>
-                    <li class="nav-item mx-2 p-sm-2">
-                        <a href="#" class="nav-link nav-item-custom">MOBILE COVERS</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="ml-auto d-flex justify-content-end">
-                <ul class="navbar-nav">
-                    <li class="nav-item mx-2 p-sm-2">
-                        <a href="#" class="nav-link">LOGIN</a>
-                    </li>
-                    <li class="nav-item p-sm-1">
-                        <a href="#" class="nav-link" style="font-size: x-large;"><i class="bx bx-heart"></i></a>
+                    <li class="nav-item">
+                        <a href="login_page.html" class="nav-link">Login</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <nav class="navbar navbar-expand bg-white text-black">
-        <div class="scrollbar d-inline-block">
-            <ul class="navbar-nav">
-                <li class="nav-item mx-4 p-sm-2">
-                    <a href="#" class="nav-link nav-item-custom">MEN</a>
-                </li>
-                <li class="nav-item mx-4 p-sm-2">
-                    <a href="#" class="nav-link nav-item-custom">WOMEN</a>
-                </li>
-                <li class="nav-item mx-4 p-sm-2">
-                    <a href="#" class="nav-link nav-item-custom">ACCESSORIES</a>
-                </li>
-                <li class="nav-item mx-4 p-sm-2">
-                    <a href="#" class="nav-link nav-item-custom">SNEAKERS</a>
-                </li>
-                <li class="nav-item mx-4 p-sm-2">
-                    <a href="#" class="nav-link nav-item-custom">SAVINGS ZONE</a>
-                </li>
-                <li class="nav-item mx-4 p-sm-2">
-                    <a href="#" class="nav-link nav-item-custom">BWKF X GOOGLE</a>
-                </li>
-                <li class="nav-item mx-4 p-sm-2">
-                    <a href="#" class="nav-link nav-item-custom">BEWAKOOF AIR</a>
-                </li>
-                <li class="nav-item mx-4 p-sm-2">
-                    <a href="#" class="nav-link nav-item-custom">HEAVY DUTY</a>
-                </li>
-                <li class="nav-item mx-4 p-sm-2">
-                    <a href="#" class="nav-link nav-item-custom">CUSTOMIZATION</a>
-                </li>
-                <li class="nav-item mx-4 p-sm-2">
-                    <a href="#" class="nav-link nav-item-custom">OFFICIAL MERCH</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</body>
-</html>
 
-
- -->
-
- <!DOCTYPE html>
- <html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
- </head>
- <style>
-    .body{
-        background-color: black;
-        background-image: url('Screenshot 2024-09-01 211213.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-
-    }
- </style>
- <body class="body">
-    <p></p>
- </body>
- </html>
-
-
- <!-- ALL LOVE -->
- <section>
-    <div class="container-fluid" style=" width: 100%; height: 540px;">
-        <img src="J1.png" class="img-fluid" width="100%" height="539px">
-    </div>
-</section>
-<section id="mon">
-    <div class="container-fluid" style=" width: 100%; height: 100%;">
-        <img src="J2.png" class="img-fluid" width="100%" height="539px">
-        <img src="J3.png" class="img-fluid" width="100%" height="539px">
-    </div>
-</section>
-<section id="woom">
-    <div class="container-fluid" style=" width: 100%; height: 100%;">
-        <img src="J4.png" class="img-fluid" width="100%" height="539px">
-        <img src="J5.png" class="img-fluid" width="100%" height="539px">
-    </div>
-</section><br><br>
-<section>
-    <div class="container-fluid" style=" width: 100%; height: 100%;">
-        <img src="J6.png" class="img-fluid" width="100%" height="539px">
-    </div>
-</section><br><br>
-<section>
-    <div class="container-fluid" style=" width: 100%; height: 100%;">
-        <img src="J7.png" class="img-fluid" width="100%" height="539px">
-    </div>
-</section>
-<footer>
-    <div class="container-fluid" style=" width: 100%; height: 100%;">
-        <img src="J8.png" class="img-fluid" width="100%" height="539px">
-    </div>
-</footer>
-
-<!-- ALL LOVE ENDS -->
-
-
-
-<div>
-    <h4 class="h4 text-black" style="font-size: 6vh;">Hello, Again</h4>
-    <h6 class="h6 text-black" style="font-size: 3vh;">We are happy to have you back!</h6><hr>
-    <form action="#">
-        <div>
-            <div class="form-floating mb-3 mt-3">
-                <input type="email" class="form-control border-0 w-100 " id="email" placeholder="Enter email" name="email" required autocomplete="on">
-                <label for="email">Enter email</label>
-              </div>
-              <div class="form-floating mt-3 mb-3">
-                <input type="password" class="form-control border-0 w-100 " id="pwd" placeholder="Enter password" name="pswd" required autocomplete="on">
-                <label for="pwd">Enter password</label>
-              </div>
-              <div class="row">
-                <div class="col-sm-12">
-                    <span style="font-size: medium;" class="text-sm-start"><input type="checkbox" class="h-50"> Remember me</span>
-                    <span style="font-size: medium;"><a href="#" class="float-end "><i>forgot password?</i></a></span>
-                </div>
-            </div>
-        </div><br>
-        <div class="container text-center">
-            <button class="btn bg-black border-white border-3 text-white rounded-pill btn-lg " style="width: 100%;" type="submit">Sign in</button>
-            <br>
-            <i style="font-size: medium;" class="text-sm-start ">Don't have an account? <a href="#">sign up</a></i>
-        </div>
-    </form><hr>
-    <h6 class="h6 text-black text-center">Or</h6>
-    <div class="container text-center ">
-        <a href="#" class="btn btn-lg bg-black rounded-pill text-white" style="width: 100%;">
-            <img src="https://th.bing.com/th/id/R.c8bf7c087ca9793d094042845707ffac?rik=fjZN1AYH30vXIw&riu=http%3a%2f%2fpngimg.com%2fuploads%2fgoogle%2fgoogle_PNG19635.png&ehk=ZmsumEtoeJQhKoUzQTZO2TEbYPBu0%2b7EFdjmJ3qljls%3d&risl=&pid=ImgRaw&r=0" class="img-circle" style="height: 34px;">
-            Continue with Google
-        </a>
-        </div>
-    </div><br>
-</div>
-
-
-
-<nav class="navbar navbar-expand text-black">
-    <div class="container d-flex justify-content-start">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="welcome_page.html"><img
-                    src="C:\Users\Yash\OneDrive\Pictures\Screenshots\Screenshot 2024-08-31 181126.png"
-                    alt="Bewakoof">
-                </a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-
-
-
-<!-- login page -->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="shortcut icon" href="C:\Users\Yash\OneDrive\Pictures\Screenshots\Screenshot 2024-09-02 125454.png"
-        type="image/x-icon">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" /> -->
-    <script src="welcome.js"></script>
-    <title>Bewakoof-Online Fashion Shopping Website</title>
-</head>
-<style>
-body{
-    background-color: rgb(237, 233, 206);
-}
-</style>
-
-<body>
-    <div class="container-fluid mt-5">
-        <div class="row w-100 h-100">
-            <div class="col-sm-7" >
-                <img src="login_img.jpg" class="img-fluid">
-            </div>
-            <div class="col-sm-5">
-                <div>
-                    <h4 class="h4 text-black" style="font-size: 6vh;">Hello, Again</h4>
-                    <h6 class="h6 text-black" style="font-size: 3vh;">We are happy to have you back!</h6><hr>
-                    <form action="#">
-                        <div>
-                            <div class="form-floating mb-3 mt-3">
-                                <input type="email" class="form-control border-0 w-100 " id="email" placeholder="Enter email" name="email" required autocomplete="on">
-                                <label for="email">Enter email</label>
-                              </div>
-                              <div class="form-floating mt-3 mb-3">
-                                <input type="password" class="form-control border-0 w-100 " id="pwd" placeholder="Enter password" name="pswd" required autocomplete="on">
-                                <label for="pwd">Enter password</label>
-                              </div>
-                              <div class="row">
-                                <div class="col-sm-12">
-                                    <span style="font-size: medium;" class="text-sm-start"><input type="checkbox" class="h-50"> Remember me</span>
-                                    <span style="font-size: medium;"><a href="#" class="float-end "><i>forgot password?</i></a></span>
-                                </div>
+    <div class="container my-5">
+        <h2>Your Shopping Cart</h2>
+        <div class="row">
+            <!-- Cart Item 1 -->
+            <div class="col-md-12 cart-item mb-4">
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-md-2">
+                            <img src="https://via.placeholder.com/150" class="img-fluid rounded-start" alt="product-image">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Product Name</h5>
+                                <p class="card-text">Brand: Product Brand</p>
+                                <p class="card-text">Price: ₹1,299</p>
+                                <p class="card-text">Quantity: 
+                                    <select class="form-select" style="width: 80px;">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </p>
                             </div>
-                        </div><br>
-                        <div class="container text-center">
-                            <button class="btn bg-black border-white border-3 text-white rounded-pill btn-lg " style="width: 100%;" type="submit">Sign in</button>
-                            <br>
-                            <i style="font-size: medium;" class="text-sm-start ">Don't have an account? <a href="#">sign up</a></i>
                         </div>
-                    </form><hr>
-                    <h6 class="h6 text-black text-center">Or</h6>
-                    <div class="container text-center ">
-                        <a href="#" class="btn btn-lg bg-black rounded-pill text-white" style="width: 100%;">
-                            <img src="https://th.bing.com/th/id/R.c8bf7c087ca9793d094042845707ffac?rik=fjZN1AYH30vXIw&riu=http%3a%2f%2fpngimg.com%2fuploads%2fgoogle%2fgoogle_PNG19635.png&ehk=ZmsumEtoeJQhKoUzQTZO2TEbYPBu0%2b7EFdjmJ3qljls%3d&risl=&pid=ImgRaw&r=0" class="img-circle" style="height: 34px;">
-                            Continue with Google
-                        </a>
+                        <div class="col-md-2 text-end">
+                            <button class="btn btn-danger">Remove</button>
                         </div>
-                    </div><br>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cart Item 2 -->
+            <div class="col-md-12 cart-item mb-4">
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-md-2">
+                            <img src="https://via.placeholder.com/150" class="img-fluid rounded-start" alt="product-image">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Product Name</h5>
+                                <p class="card-text">Brand: Product Brand</p>
+                                <p class="card-text">Price: ₹999</p>
+                                <p class="card-text">Quantity: 
+                                    <select class="form-select" style="width: 80px;">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 text-end">
+                            <button class="btn btn-danger">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 offset-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="cart-total">Total: ₹2,298</h4>
+                        <button class="btn btn-primary w-100">Proceed to Checkout</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</body>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
 </html>

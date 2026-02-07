@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+    <title>Bewakoof-Online Fashion Shopping Website</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="search.js" defer></script><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="C:\Users\Yash\OneDrive\Pictures\Screenshots\Screenshot 2024-09-02 125454.png"
+        type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" /> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="welcome.css">
+    <script src="welcome.js"></script>
+</head>
+<body>
+    <div class="sticky-top">
+        <!-- navbar 1 starts from here -->
+        <nav class="navbar navbar-expand-sm text-black d-none d-md-flex"
+            style="height: 10px; background-color: rgb(228, 228, 228);padding: 13px;">
+            <div class="container">
+                <div class="d-flex justify-content-center">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="https://www.grabon.in/" class="nav-link" style="font-size: x-small; color: black;"
+                                target="_blank">Offers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.facebook.com/" class="nav-link"
+                                style="font-size: x-small; color: black;" target="_blank">Facebook</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://play.google.com/store/games?device=windows" class="nav-link"
+                                style="font-size: x-small; color: black;" target="_blank">Download App</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#tribee" class="nav-link" style="font-size: x-small; color: black;">TriBe
+                                Membership</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.google.com/maps/place/Bewakoof+Clothing+Store+-+Kamla+Nagar+New+Delhi/@28.6803597,77.205671,17z/data=!3m1!4b1!4m6!3m5!1s0x390cfd19cd9ba3ef:0xd775923481b88e96!8m2!3d28.6803597!4d77.2082459!16s%2Fg%2F11lmch81d_?entry=ttu&g_ep=EgoyMDI0MDkwMy4wIKXMDSoASAFQAw%3D%3D"
+                                class="nav-link" style="font-size: x-small; color: black;" target="_blank">Find a store
+                                near
+                                me</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" style="font-size: x-small; color: black;">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.ordertracker.com/" class="nav-link"
+                                style="font-size: x-small; color: black;" target="_blank">Track order</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar 2 starts from here -->
+        <nav class="navbar navbar-expand-lg bg-white  text-black shadow-sm">
+            <div class="container">
+                <a href="welcome_page.html" class="navbar-brand">
+                    <img src="brand_logo.svg" alt="Bewakoof" class="img-fluid">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- <li class="nav-item">
+                        <a href="welcome_page.html">Bewakoof</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a href="men_page.html" class="nav-link naitem">MEN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="women_page.html" class="nav-link naitem">WOMEN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#axx" class="nav-link naitem">MOBILE
+                                COVERS</a>
+                        </li>
+                    </ul>
+
+                    <form class="d-flex me-3" style="position: relative;" onsubmit="handleSearch(event)">
+                        <input type="search" class="form-control me-2" placeholder="Search" aria-label="Search"
+                            id="sear" onkeyup="showSuggestions()" style="width: 300px;" autocomplete="off">
+                        <button class="btn btn-outline-secondary" type="submit" id="searchBtn"><i
+                                class="bi bi-search"></i></button>
+                        <ul id="sugglist" class="list-group"
+                            style="position: absolute; z-index: 9999; background: white; width: 300px; display: none; top: 100%; left: 0; margin-top: 4px;">
+                        </ul>
+                    </form>
+                    <ul class="navbar-nav">
+                        <li class="nav-item" id="loginNavItem">
+                            <a href="login_page.html" class="nav-link naitem"><i class="bi bi-person me-1"></i>LOGIN</a>
+                        </li>
+                        <li class="nav-item" id="nameNavItem" style="display: none;">
+                            <span class="nav-link naitem" id="userName">
+                                <i class="bi bi-person-circle me-2"></i> 
+                                <span id="userDisplayName"></span>
+                            </span>
+                        </li>
+                        <li class="nav-item">
+                            <a href="cart_page.html" class="nav-link naitem"><i class="bi bi-cart me-1"></i>CART</a>
+                        </li>
+                        <li class="nav-item" id="logoutNavItem" style="display: none;">
+                            <button class="btn btn-outline-danger btn-sm ms-3 mt-1" onclick="logout()">Log Out</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container my-4">
+        <h1>Search Results</h1>
+        <div class="row row-cols-1 row-cols-md-5 g-4" id="productCards">
+            
+        </div>
+    </div>
+
+    <script>
+        const product = [
+        { name: "Women's Brown Batman Graphic Print Hoodies", brand: "Bewakoof", price: 499, size: "M", category: "hoodies", imageUrl: "women/ho1.webp" },
+    { name: "Women's Black Printed Graphic Logo Sweatshirt", brand: "FashionHub", price: 1299, size: "L", category: "sweater", imageUrl: "women/sw3.webp" },
+    { name: "Women's Offwhite Graphic Printed Sweatshirt", brand: "Trendsetter", price: 999, size: "S", category: "sweater", imageUrl: "women/sw4.webp" },
+    { name: "Women's Emerald Green Printed Sweatshirt", brand: "ShoeKing", price: 1699, category: "sweater", imageUrl: "women/sw5.webp" },
+    { name: "Women's Light Blue Baggy Straight Fit Jean", brand: "FashionHub", price: 799, size: "M", category: "Jeans", imageUrl: "women/je3.webp" },
+    { name: "Women's Black Printed Design Sweatshirt", brand: "FashionHub", price: 499, size: "L", category: "sweater", imageUrl: "women/sw2.webp" },
+    { name: "Women's Teal Green Puff Graphic Printed Jacket", brand: "ShoeKing", price: 1499, category: "hoodies", imageUrl: "women/pa5.webp" },
+    { name: "Women's Black Graphic Baggy Shorts", brand: "FashionHub", price: 899, category: "shorts", imageUrl: "women/sh3.webp" },
+    { name: "Women's Green Printed Baggy Shorts", brand: "Trendsetter", price: 1299, category: "shorts", imageUrl: "women/sh4.webp" },
+    { name: "Women's Brown Texttile Baggy Shorts", brand: "ShoeKing", price: 1699, category: "shorts", imageUrl: "women/sh5.webp" },
+    { name: "Men's Grey Puff Graphic Printed Jacket", brand: "FashionHub", price: 999, size: "S", category: "hoodies", imageUrl: "men/pa3.webp" },
+    { name: "Women's Denim Blue Baggy Shorts", brand: "LeatherWorld", price: 4999, category: "shorts", imageUrl: "women/sh6.webp" },
+    { name: "Women's lined Yellow Black Graphic Printed Shirt", brand: "FashionHub", price: 499, category: "Shirts", imageUrl: "women/ts2.webp" },
+    { name: "Women's lined Grey White Graphic Printed Shirt", brand: "FashionHub", price: 799, category: "Shirts", imageUrl: "women/ts3.webp" },
+    { name: "Women's Check Yellow Black Graphic Printed T-Shirt", brand: "Trendsetter", price: 1199, size: "S", category: "T-shirts", imageUrl: "women/ts4.webp" },
+    { name: "Women's Check Multi-color Graphic Printed T-Shirt", brand: "ShoeKing", price: 1699, size: "M", category: "T-shirts", imageUrl: "women/ts5.webp" },
+    { name: "Women's lined Offwhite Graphic Printed T-Shirt", brand: "LeatherWorld", price: 4999, size: "L", category: "T-shirts", imageUrl: "women/ts6.webp" },
+    { name: "Women's Black Grey Graphic Printed Jacket", brand: "Bewakoof", price: 699, size: "XL", category: "hoodies", imageUrl: "women/pa1.webp" },
+    { name: "Women's Teal Green Graphic Printed Jacket", brand: "FashionHub", price: 499, size: "M", category: "hoodies", imageUrl: "women/pa2.webp" },
+    { name: "Women's Grey Puff Graphic Printed Jacket", brand: "FashionHub", price: 999, size: "S", category: "hoodies", imageUrl: "women/pa3.webp" },
+    { name: "Women's Teal Puff Graphic Printed Jacket", brand: "Trendsetter", price: 1499, size: "L", category: "hoodies", imageUrl: "women/pa4.webp" },
+    { name: "Women's Pastel Grey Graphic Printed Shirt", brand: "Bewakoof", price: 799, size: "S", category: "Shirts", imageUrl: "women/ts1.webp" },
+    { name: "Women's Black-grey Snoopy-00 Graphic Print Hoodies", brand: "FashionHub", price: 599, size: "M", category: "hoodies", imageUrl: "women/ho2.webp" },
+    { name: "Women's Plain Dat Green Graphic Print Hoodies", brand: "FashionHub", price: 1099, size: "L", category: "hoodies", imageUrl: "women/ho3.webp" },
+    { name: "Women's Black Puff Graphic Printed Jacket", brand: "LeatherWorld", price: 3999, category: "hoodies", imageUrl: "women/pa6.webp" },
+    { name: "Women's Lime Green Plain T-shirt", brand: "Bewakoof", price: 599, size: "M", category: "T-shirts", imageUrl: "women/seem1.webp" },
+    { name: "Women's Green Lime Graphic Printed T-shirt", brand: "FashionHub", price: 499, size: "L", category: "T-shirts", imageUrl: "women/seem2.webp" },
+    { name: "Women's Black Marvel Graphic Printed T-shirt", brand: "FashionHub", price: 899, size: "S", category: "T-shirts", imageUrl: "women/seem3.webp" },
+    { name: "Women's Black Graphic Printed T-shirt", brand: "Trendsetter", price: 1099, size: "XL", category: "T-shirts", imageUrl: "women/seem4.webp" },
+    { name: "Women's Grey Graphic Printed T-shirt", brand: "ShoeKing", price: 1599, size: "M", category: "T-shirts", imageUrl: "women/seem5.webp" },
+    { name: "Women's Lime Yellow Graphic Printed T-shirt", brand: "LeatherWorld", price: 4999, size: "L", category: "T-shirts", imageUrl: "women/seem6.webp" },
+    { name: "Women's Dusk Grey Baggy Trouser", brand: "Bewakoof", price: 799, category: "Trousers", imageUrl: "women/t1.webp" },
+    { name: "Women's Grey Baggy Trouser", brand: "FashionHub", price: 599, category: "Trousers", imageUrl: "women/t2.webp" },
+    { name: "Women's Black Plus Size Trouser", brand: "FashionHub", price: 899, category: "Trousers", imageUrl: "women/t3.webp" },
+    { name: "Women's Offwhite Fit Trouser", brand: "Trendsetter", price: 1199, category: "Trousers", imageUrl: "women/t4.webp" },
+    { name: "Women's Brown Quote Motivational Graphic Print Hoodies", brand: "Trendsetter", price: 1399, size: "S", category: "hoodies", imageUrl: "women/ho4.webp" },
+    { name: "Women's Plain Dat Blue Graphic Print Hoodies", brand: "ShoeKing", price: 1799, size: "M", category: "hoodies", imageUrl: "women/ho5.webp" },
+    { name: "Women's Brown Plain Graphic Print Hoodies", brand: "LeatherWorld", price: 4999, size: "L", category: "hoodies", imageUrl: "women/ho6.webp" },
+    { name: "Women's Black Baggy Straight Fit Jean", brand: "Bewakoof", price: 799, size: "M", category: "Jeans", imageUrl: "women/je1.webp" },
+    { name: "Women's Light Indigo Blue Straight Fit Jean", brand: "FashionHub", price: 499, size: "L", category: "Jeans", imageUrl: "women/je2.webp" },
+    { name: "Women's Batman Black Graphic Printed Footwear", brand: "FashionHub", price: 999, category: "Footwear", imageUrl: "women/pip3.webp" },
+    { name: "Women's Casual White Footwear", brand: "Trendsetter", price: 1299, category: "Footwear", imageUrl: "women/pip4.webp" },
+    { name: "Women's Casual Black Footwear", brand: "ShoeKing", price: 1599, category: "Footwear", imageUrl: "women/pip5.webp" },
+    { name: "Women's Peach Fit Trouser", brand: "ShoeKing", price: 1599, category: "Trousers", imageUrl: "women/t5.webp" },
+    { name: "Women's Denim Blue Trouser", brand: "LeatherWorld", price: 4999, category: "Trousers", imageUrl: "women/t6.webp" },
+    { name: "Women's Marvel Deadpool Printed Footwear", brand: "Bewakoof", price: 799, category: "Footwear", imageUrl: "women/pip1.webp" },
+    { name: "Women's DC Batman Printed Footwear", brand: "FashionHub", price: 599, category: "Footwear", imageUrl: "women/pip2.webp" },
+    { name: "Women's Blue Baggy Straight Fit Jean", brand: "Trendsetter", price: 1299, size: "XL", category: "Jeans", imageUrl: "women/je4.webp" },
+    { name: "Women's Blue Baggy Straight Fit Jean", brand: "ShoeKing", price: 1699, size: "L", category: "Jeans", imageUrl: "women/je5.webp" },
+    { name: "Women's Black Baggy Straight Fit Jean", brand: "LeatherWorld", price: 4999, size: "M", category: "Jeans", imageUrl: "women/je6.webp" },
+    { name: "Women's Black Zipped Plain Sweatshirt", brand: "Bewakoof", price: 699, size: "M", category: "sweater", imageUrl: "women/sw1.webp" },
+    { name: "Women's Teal Printed Graphic Sweatshirt", brand: "LeatherWorld", price: 4999, size: "S", category: "sweater", imageUrl: "women/sw6.webp" },
+    { name: "Women's Chome Baggy Shorts", brand: "Bewakoof", price: 799, category: "shorts", imageUrl: "women/sh1.webp" },
+    { name: "Women's Black Olive Green Baggy Shorts", brand: "FashionHub", price: 499, category: "shorts", imageUrl: "women/sh2.webp" },
+    { name: "Women's Yellow White Footwear", brand: "LeatherWorld", price: 4999, category: "Footwear", imageUrl: "women/pip6.webp" },
+    { name: "Men's Brown Batman Graphic Print Hoodies", brand: "Bewakoof", price: 499, size: "M", category: "hoodies", imageUrl: "men/ho1.webp" },
+    { name: "Men's Black Printed Graphic Logo Sweatshirt", brand: "FashionHub", price: 1299, size: "L", category: "sweater", imageUrl: "men/sw3.webp" },
+    { name: "Men's Offwhite Graphic Printed Sweatshirt", brand: "Trendsetter", price: 999, size: "S", category: "sweater", imageUrl: "men/sw4.webp" },
+    { name: "Men's Emerald Green Printed Sweatshirt", brand: "ShoeKing", price: 1699, category: "sweater", imageUrl: "men/sw5.webp" },
+    { name: "Men's Light Blue Baggy Straight Fit Jean", brand: "FashionHub", price: 799, size: "M", category: "Jeans", imageUrl: "men/je3.webp" },
+    { name: "Men's Black Printed Design Sweatshirt", brand: "FashionHub", price: 499, size: "L", category: "sweater", imageUrl: "men/sw2.webp" },
+    { name: "Men's Teal Green Puff Graphic Printed Jacket", brand: "ShoeKing", price: 1499, category: "hoodies", imageUrl: "men/pa5.webp" },
+    { name: "Men's Black Puff Graphic Printed Jacket", brand: "LeatherWorld", price: 3999, category: "hoodies", imageUrl: "men/pa6.webp" },
+    { name: "Men's Lime Green Plain T-shirt", brand: "Bewakoof", price: 599, size: "M", category: "T-shirts", imageUrl: "men/seem1.webp" },
+    { name: "Men's Green Lime Graphic Printed T-shirt", brand: "FashionHub", price: 499, size: "L", category: "T-shirts", imageUrl: "men/seem2.webp" },
+    { name: "Men's Black Marvel Graphic Printed T-shirt", brand: "FashionHub", price: 899, size: "S", category: "T-shirts", imageUrl: "men/seem3.webp" },
+    { name: "Men's Black Graphic Printed T-shirt", brand: "Trendsetter", price: 1099, size: "XL", category: "T-shirts", imageUrl: "men/seem4.webp" },
+    { name: "Men's Grey Graphic Printed T-shirt", brand: "ShoeKing", price: 1599, size: "M", category: "T-shirts", imageUrl: "men/seem5.webp" },
+    { name: "Men's Lime Yellow Graphic Printed T-shirt", brand: "LeatherWorld", price: 4999, size: "L", category: "T-shirts", imageUrl: "men/seem6.webp" },
+    { name: "Men's Dusk Grey Baggy Trouser", brand: "Bewakoof", price: 799, category: "Trousers", imageUrl: "men/t1.webp" },
+    { name: "Men's Grey Baggy Trouser", brand: "FashionHub", price: 599, category: "Trousers", imageUrl: "men/t2.webp" },
+    { name: "Men's Black Plus Size Trouser", brand: "FashionHub", price: 899, category: "Trousers", imageUrl: "men/t3.webp" },
+    { name: "Men's Offwhite Fit Trouser", brand: "Trendsetter", price: 1199, category: "Trousers", imageUrl: "men/t4.webp" },
+    { name: "Men's Brown Quote Motivational Graphic Print Hoodies", brand: "Trendsetter", price: 1399, size: "S", category: "hoodies", imageUrl: "men/ho4.webp" },
+    { name: "Men's Plain Dat Blue Graphic Print Hoodies", brand: "ShoeKing", price: 1799, size: "M", category: "hoodies", imageUrl: "men/ho5.webp" },
+    { name: "Men's Brown Plain Graphic Print Hoodies", brand: "LeatherWorld", price: 4999, size: "L", category: "hoodies", imageUrl: "men/ho6.webp" },
+    { name: "Men's Black Baggy Straight Fit Jean", brand: "Bewakoof", price: 799, size: "M", category: "Jeans", imageUrl: "men/je1.webp" },
+    { name: "Men's Light Indigo Blue Straight Fit Jean", brand: "FashionHub", price: 499, size: "L", category: "Jeans", imageUrl: "men/je2.webp" },
+    { name: "Men's Batman Black Graphic Printed Footwear", brand: "FashionHub", price: 999, category: "Footwear", imageUrl: "men/pip3.webp" },
+    { name: "Men's Casual White Footwear", brand: "Trendsetter", price: 1299, category: "Footwear", imageUrl: "men/pip4.webp" },
+    { name: "Men's Casual Black Footwear", brand: "ShoeKing", price: 1599, category: "Footwear", imageUrl: "men/pip5.webp" },
+    { name: "Men's Peach Fit Trouser", brand: "ShoeKing", price: 1599, category: "Trousers", imageUrl: "men/t5.webp" },
+    { name: "Men's Denim Blue Trouser", brand: "LeatherWorld", price: 4999, category: "Trousers", imageUrl: "men/t6.webp" },
+    { name: "Men's Marvel Deadpool Printed Footwear", brand: "Bewakoof", price: 799, category: "Footwear", imageUrl: "men/pip1.webp" },
+    { name: "Men's DC Batman Printed Footwear", brand: "FashionHub", price: 599, category: "Footwear", imageUrl: "men/pip2.webp" },
+    { name: "Men's Blue Baggy Straight Fit Jean", brand: "Trendsetter", price: 1299, size: "XL", category: "Jeans", imageUrl: "men/je4.webp" },
+    { name: "Men's Blue Baggy Straight Fit Jean", brand: "ShoeKing", price: 1699, size: "L", category: "Jeans", imageUrl: "men/je5.webp" },
+    { name: "Men's Teal Puff Graphic Printed Jacket", brand: "Trendsetter", price: 1499, size: "L", category: "hoodies", imageUrl: "men/pa4.webp" },
+    { name: "Men's Pastel Grey Graphic Printed Shirt", brand: "Bewakoof", price: 799, size: "S", category: "Shirts", imageUrl: "men/ts1.webp" },
+    { name: "Men's Black-grey Snoopy-00 Graphic Print Hoodies", brand: "FashionHub", price: 599, size: "M", category: "hoodies", imageUrl: "men/ho2.webp" },
+    { name: "Men's Plain Dat Green Graphic Print Hoodies", brand: "FashionHub", price: 1099, size: "L", category: "hoodies", imageUrl: "men/ho3.webp" },
+    { name: "Men's Yellow White Footwear", brand: "LeatherWorld", price: 4999, category: "Footwear", imageUrl: "men/pip6.webp" },
+
+];
+
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('query')?.toLowerCase() || "";
+
+        
+        const filteredProducts = product.filter(product => 
+            product.name.toLowerCase().includes(query) || 
+            product.category.toLowerCase().includes(query)
+        );
+
+        
+        const productList = document.getElementById("productCards");
+
+        if (filteredProducts.length > 0) {
+            filteredProducts.forEach(product => {
+                const productItem = document.createElement("div");
+                productItem.className = "col";
+                productItem.innerHTML = `
+                    <div class="card h-100 shadow-sm showp">
+                        <img src="${product.imageUrl}" class="card-img-top" alt="${product.name}" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">${product.name}</h5>
+                            <p class="card-text">Brand: ${product.brand}</p>
+                            <p class="card-text">₹${product.price}</p>
+                            <p class="card-text">Size: ${product.size || "N/A"}</p>
+                        </div>
+                    </div>
+                `;
+                productList.appendChild(productItem);
+            });
+        } else {
+            productList.innerHTML = "<p>No results found for your search.</p>";
+        }
+
+        document.addEventListener("DOMContentLoaded", async () => {
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('query')?.toLowerCase() || "";
+
+       
+        const products = await fetchProducts(query);
+
+       
+        renderProducts(products);
+    });
+
+
+    
+
+    </script>
+</body>
+</html>
