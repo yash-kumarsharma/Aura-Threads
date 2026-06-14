@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Inter', sans-serif;
+  --font-serif: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  
+  --color-obsidian: #000000;
+  --color-alabaster: #F4F4F5;
+  --color-stone: #555555;
+  --color-copper: #111111;
+  --color-sage-dark: #000000;
+
+  /* Legacy mappings mapped to Aura Threads design system */
+  --color-sand: #F4F4F5;
+  --color-sand-hover: #E4E4E7;
+  --color-offwhite: #FFFFFF;
+  --color-charcoal: #111111;
+  --color-charcoal-hover: #000000;
+  --color-sage: #111111;
+  --color-sage-hover: #000000;
+}
+
+/* Custom styles and scrollbar styling matching the new aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F4F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #171717;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #262626;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Global inputs focus border styles matching the editorial aesthetic */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #171717 !important;
+  box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.2) !important;
+}
+
+/* Premium micro-interactions */
+.premium-transition {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-card-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.premium-card-hover:hover {
+  transform: translateY(-4px);
+}
+
+/* Continuous scroll marquee keyframes */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+

@@ -1,54 +1,36 @@
-# Bewakoof E-Commerce Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-A static e-commerce website mimicking Bewakoof, built with HTML, CSS, and JavaScript. This project showcases a fashion shopping platform with product listings, user authentication, search functionality, and responsive design.
+## Getting Started
 
-## Features
+First, run the development server:
 
-- **Product Catalog**: Browse men's and women's clothing, accessories, and sneakers with filtering options (price, size, brand, category).
-- **User Authentication**: Simple login system using session storage with hardcoded users.
-- **Search Functionality**: Real-time search with suggestions across product names and categories.
-- **Responsive Design**: Built with Bootstrap for mobile and desktop compatibility.
-- **Interactive Elements**: Image sliders, hover effects, and dynamic product cards.
-- **Cart and User Pages**: Basic cart page and user profile management.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Technologies Used
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
-- **Styling**: Bootstrap 5, Custom CSS
-- **Icons**: Boxicons, Bootstrap Icons
-- **Images**: Local assets in subdirectories (men/, women/, access/, etc.)
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-## Project Structure
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- `welcome_page.html`: Main landing page with product showcases and navigation.
-- `men_page.html` / `women_page.html`: Product listing pages with filters.
-- `login_page.html`: User login form.
-- `cart_page.html`: Basic cart page.
-- `user.html`: User profile and product upload page.
-- `welcome.css`: Custom styles for layout and animations.
-- `welcome.js`: JavaScript for interactivity, login, and search.
-- `search.js`: Search functionality script.
-- `TODO.md`: Task tracking file.
+## Learn More
 
-## Setup
+To learn more about Next.js, take a look at the following resources:
 
-1. Clone or download the repository.
-2. Open `welcome_page.html` in a web browser to start.
-3. No server required; all functionality is client-side.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## Usage
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-- Navigate through the site using the top navigation.
-- Use the search bar for product queries.
-- Login with sample credentials (e.g., email: yash@gmail.com, password: 12345678).
-- Filter products on men/women pages by price, size, brand, or category.
+## Deploy on Vercel
 
-## Notes
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-- This is a demonstration project; no backend or real payment integration.
-- Images and some links are placeholders or point to external sites.
-- For production use, replace absolute paths and add proper server-side logic.
-
-## License
-
-This project is for educational purposes. All rights reserved to the original creators.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
