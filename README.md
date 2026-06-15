@@ -4,18 +4,6 @@ A premium, design-studio-inspired e-commerce platform for contemporary menswear,
 
 ---
 
-## ⚡ Core Technical Features
-
-This project focuses on clean architecture, modern state management, and optimized user experience:
-
-* **Role-Based Client Routing & Onboarding**: Complete separation of Customer and Merchant roles. Merchants access a dynamic design catalog form and custom inventory manager, while Customers view interactive order timelines and elite membership levels.
-* **Deterministic LCG Catalog Sorting**: Custom seed-based Linear Congruential Generator (LCG) shuffle function implemented at the database level to ensure random product distribution across compiles, resolving Next.js client-to-server (SSR) rendering hydration mismatches.
-* **Advanced Multi-term Search & Synonyms**: A keyword-splitting query engine featuring synonym expansion mapping (e.g., `"tshirt"` matching `"T-Shirts"`) and strict word-boundary checks to prevent false substring collisions.
-* **SVG Vector Favicon Integration**: Optimized lightweight vector `icon.svg` served as a static dynamic asset, keeping the git repository binary-free and responsive at all resolutions.
-* **Responsive Architecture**: Fully containerized custom grid designs built with React hooks, local storage sync listeners, and clean transition states.
-
----
-
 ## 🛠️ Tech Stack
 
 ![Next.js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
@@ -25,6 +13,18 @@ This project focuses on clean architecture, modern state management, and optimiz
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+
+---
+
+## ⚡ Core Technical Features
+
+This project focuses on clean architecture, modern state management, and optimized user experience:
+
+* **Role-Based Client Routing & Onboarding**: Complete separation of Customer and Merchant roles. Merchants access a dynamic design catalog form and custom inventory manager, while Customers view interactive order timelines and elite membership levels.
+* **Deterministic LCG Catalog Sorting**: Custom seed-based Linear Congruential Generator (LCG) shuffle function implemented at the database level to ensure random product distribution across compiles, resolving Next.js client-to-server (SSR) rendering hydration mismatches.
+* **Advanced Multi-term Search & Synonyms**: A keyword-splitting query engine featuring synonym expansion mapping (e.g., `"tshirt"` matching `"T-Shirts"`) and strict word-boundary checks to prevent false substring collisions.
+* **SVG Vector Favicon Integration**: Optimized lightweight vector `icon.svg` served as a static dynamic asset, keeping the git repository binary-free and responsive at all resolutions.
+* **Responsive Architecture**: Fully containerized custom grid designs built with React hooks, local storage sync listeners, and clean transition states.
 
 ---
 
@@ -56,7 +56,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 👨💻 Author
+## 💻 Author
 
 **Built with ❤️ and 💻 by:**
 
