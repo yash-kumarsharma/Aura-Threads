@@ -36,7 +36,7 @@ export default function ItemDetailsPage({ params }) {
         <i className="bi bi-search text-5xl text-neutral-300 block mb-4"></i>
         <h2 className="text-xl font-bold mb-2 font-display text-charcoal uppercase tracking-wider">Product Not Found</h2>
         <p className="text-neutral-500 text-sm mb-6">The product you are trying to view does not exist in our catalog.</p>
-        <Link href="/" className="inline-block bg-charcoal hover:bg-charcoal/80 text-white font-bold px-6 py-2.5 rounded-full text-xs transition-colors font-display uppercase tracking-widest">
+        <Link href="/" className="inline-block bg-black hover:bg-neutral-800 text-white font-bold px-6 py-2.5 rounded-none text-xs transition-colors font-sans uppercase tracking-widest">
           Back to Store
         </Link>
       </div>
@@ -137,11 +137,11 @@ export default function ItemDetailsPage({ params }) {
               </Link>
             </div>
 
-            <hr className="border-sand/40 my-6" />
+            <hr className="border-black/5 my-6" />
 
             {/* Product description */}
             <div>
-              <h5 className="font-bold text-xs uppercase tracking-wider text-charcoal mb-3 font-display">Product Description</h5>
+              <h5 className="font-bold text-xs uppercase tracking-wider text-black mb-3 font-sans">Product Description</h5>
               <p className="text-neutral-500 text-xs sm:text-sm leading-relaxed font-sans">
                 {product.description || "Elevate your seasonal wardrobe collections with this handpicked, ultra-premium attire. Designed with maximum emphasis on comfort, durable fiber weaves, and modern tailoring fit."}
               </p>

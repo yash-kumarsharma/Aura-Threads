@@ -11,7 +11,6 @@ export default function MenPage() {
   // Filter states
   const [maxPrice, setMaxPrice] = useState(5000);
   const [selectedSize, setSelectedSize] = useState("");
-  const [selectedBrand, setSelectedBrand] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
 
   // Sync custom uploads
@@ -25,20 +24,23 @@ export default function MenPage() {
     return () => window.removeEventListener("productsUpdated", handleUpdate);
   }, []);
 
-  const menProducts = products.filter(p => !p.gender || p.gender === "men" || p.gender === "unisex");
+  const menProducts = products.filter(p => 
+    (!p.gender || p.gender === "men" || p.gender === "unisex") &&
+    p.category &&
+    p.category.toLowerCase() !== "accessories" &&
+    p.category.toLowerCase() !== "footwear"
+  );
 
   const filtered = menProducts.filter(p => {
     const priceMatch = p.price <= maxPrice;
     const sizeMatch = selectedSize ? p.size === selectedSize : true;
-    const brandMatch = selectedBrand ? p.brand === selectedBrand : true;
     const categoryMatch = selectedCategory ? p.category === selectedCategory : true;
-    return priceMatch && sizeMatch && brandMatch && categoryMatch;
+    return priceMatch && sizeMatch && categoryMatch;
   });
 
   const resetFilters = () => {
     setMaxPrice(5000);
     setSelectedSize("");
-    setSelectedBrand("");
     setSelectedCategory("");
   };
 
@@ -93,32 +95,6 @@ export default function MenPage() {
               </select>
             </div>
 
-            {/* Brand Filter */}
-            <div className="border-b border-black/5 pb-5 mb-5">
-              <h5 className="font-bold text-[10px] uppercase tracking-widest mb-4 font-sans text-black">Brand</h5>
-              <div className="space-y-2.5">
-                {[
-                  { value: "", label: "All Brands" },
-                  { value: "Bewakoof", label: "Bewakoof" },
-                  { value: "FashionHub", label: "FashionHub" },
-                  { value: "Trendsetter", label: "Trendsetter" },
-                  { value: "ShoeKing", label: "ShoeKing" },
-                  { value: "LeatherWorld", label: "LeatherWorld" }
-                ].map((b) => (
-                  <label key={b.value} className="flex items-center gap-2.5 text-xs text-black cursor-pointer select-none font-sans uppercase tracking-wider font-bold">
-                    <input
-                      type="radio"
-                      name="brandFilter"
-                      checked={selectedBrand === b.value}
-                      onChange={() => setSelectedBrand(b.value)}
-                      className="accent-black w-3.5 h-3.5"
-                    />
-                    <span>{b.label}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-
             {/* Category Filter */}
             <div>
               <h5 className="font-bold text-[10px] uppercase tracking-widest mb-4 font-sans text-black">Category</h5>
@@ -128,15 +104,14 @@ export default function MenPage() {
                 className="w-full border border-black/10 rounded-none px-4 py-2.5 text-xs bg-white text-black focus:border-black focus:ring-0"
               >
                 <option value="">All Categories</option>
+                <option value="T-Shirts">T-Shirts</option>
                 <option value="Shirts">Shirts</option>
-                <option value="shorts">Shorts</option>
-                <option value="T-shirts">T-Shirts</option>
-                <option value="Trousers">Trousers</option>
-                <option value="Footwear">Footwear / Sneakers</option>
-                <option value="hood">Hoodies</option>
+                <option value="Polos">Polos</option>
+                <option value="Hoodies">Hoodies</option>
+                <option value="Jackets">Jackets</option>
                 <option value="Jeans">Jeans</option>
-                <option value="sweater">Sweatshirts</option>
-                <option value="Covers">Mobile Covers</option>
+                <option value="Trousers">Trousers</option>
+                <option value="Shorts">Shorts</option>
               </select>
             </div>
 

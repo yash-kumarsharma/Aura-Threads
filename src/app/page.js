@@ -23,11 +23,46 @@ export default function Home() {
     return () => window.removeEventListener("productsUpdated", handleUpdate);
   }, []);
 
-  // Filter products for the showcase (8 items to show a wide scrollable list)
-  const bestSellers = products.filter(p => p.bestSeller).slice(0, 8);
-  const summerCollection = products.filter(p => p.summerCollection).slice(0, 8);
-  const accessoriesProducts = products.filter(p => p.category === "Accessories").slice(0, 8);
-  const footwearProducts = products.filter(p => p.category === "Footwear").slice(0, 8);
+  // Filter products for the showcase (8 items to show a wide scrollable list, excluding accessories/footwear)
+  const bestSellers = products.filter(p => 
+    p.bestSeller && 
+    p.category &&
+    p.category.toLowerCase() !== "accessories" && 
+    p.category.toLowerCase() !== "footwear"
+  ).slice(0, 8);
+  
+  const summerCollection = products.filter(p => 
+    p.summerCollection && 
+    p.category &&
+    p.category.toLowerCase() !== "accessories" && 
+    p.category.toLowerCase() !== "footwear"
+  ).slice(0, 8);
+  
+  // Mix bags, caps, and sunglasses for the Essential Complements section
+  const allAcc = products.filter(p => p.category === "Accessories");
+  const accBags = allAcc.filter(p => p.id.includes("bag") || p.id === "m28" || p.id === "m29");
+  const accCaps = allAcc.filter(p => p.id.includes("cap") || p.id === "m25" || p.id === "m26");
+  const accGlasses = allAcc.filter(p => p.id.includes("sunglasses") || p.id === "m27" || p.id === "m30" || p.id === "m31");
+  
+  const accessoriesProducts = [
+    ...accBags.slice(0, 3),
+    ...accCaps.slice(0, 3),
+    ...accGlasses.slice(0, 3)
+  ];
+  
+  // Mix sneakers, loafers, casual, and formal boots for the Footwear Chapter section
+  const allFoot = products.filter(p => p.category === "Footwear");
+  const footSneakers = allFoot.filter(p => p.id.includes("sneaker") || p.id === "f2" || p.id === "f3");
+  const footLoafers = allFoot.filter(p => p.id.includes("loafer") || p.id === "f1");
+  const footCasual = allFoot.filter(p => p.id.includes("casual") || p.id === "f4");
+  const footFormal = allFoot.filter(p => p.id.includes("formal") || p.id === "f5" || p.id.includes("chelsea"));
+  
+  const footwearProducts = [
+    ...footSneakers.slice(0, 2),
+    ...footLoafers.slice(0, 2),
+    ...footCasual.slice(0, 2),
+    ...footFormal.slice(0, 2)
+  ];
 
   const handleSubscribe = (e) => {
     e.preventDefault();

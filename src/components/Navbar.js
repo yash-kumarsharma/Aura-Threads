@@ -98,9 +98,9 @@ export default function Navbar() {
   const categories = [
     { name: "New Arrivals", path: "/search?query=New Arrivals" },
     { name: "Clothing", path: "/men" },
-    { name: "Footwear", path: "/search?query=Footwear" },
-    { name: "Accessories", path: "/search?query=Accessories" },
-    { name: "Sale", path: "/search?query=New Arrivals" }
+    { name: "Footwear", path: "/footwear" },
+    { name: "Accessories", path: "/accessories" },
+    { name: "Sale", path: "/search?query=Sale" }
   ];
 
   return (
@@ -131,19 +131,19 @@ export default function Navbar() {
               CLOTHING
             </Link>
             <Link
-              href="/search?query=Footwear"
+              href="/footwear"
               className="text-black hover:text-stone text-[11px] font-bold tracking-[0.2em] transition-colors uppercase font-sans"
             >
               FOOTWEAR
             </Link>
             <Link
-              href="/search?query=Accessories"
+              href="/accessories"
               className="text-black hover:text-stone text-[11px] font-bold tracking-[0.2em] transition-colors uppercase font-sans"
             >
               ACCESSORIES
             </Link>
             <Link
-              href="/search?query=New Arrivals"
+              href="/search?query=Sale"
               className="text-red-600 hover:text-red-700 text-[11px] font-bold tracking-[0.2em] transition-colors uppercase font-sans"
             >
               SALE

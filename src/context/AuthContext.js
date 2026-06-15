@@ -6,9 +6,9 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 const AuthContext = createContext();
 
 const DEFAULT_USERS = [
-  { email: "yash@gmail.com", password: "12345678", name: "Yash Sharma", location: "Chandigarh, India" },
-  { email: "prabh@gmail.com", password: "password", name: "Prabh Singh", location: "Delhi, India" },
-  { email: "abc@gmail.com", password: "pass1234", name: "ABC Admin", location: "Mumbai, India" }
+  { email: "yash@gmail.com", password: "12345678", name: "Yash Sharma", location: "Chandigarh, India", role: "merchant" },
+  { email: "prabh@gmail.com", password: "password", name: "Prabh Singh", location: "Delhi, India", role: "customer" },
+  { email: "abc@gmail.com", password: "pass1234", name: "ABC Admin", location: "Mumbai, India", role: "customer" }
 ];
 
 export function AuthProvider({ children }) {
@@ -22,7 +22,14 @@ export function AuthProvider({ children }) {
       // Load registered users
       const storedUsers = localStorage.getItem("aura_users");
       if (storedUsers) {
-        setUsers(JSON.parse(storedUsers));
+        const parsed = JSON.parse(storedUsers);
+        // Migrate legacy user list without role attribute
+        const migrated = parsed.map(u => ({
+          ...u,
+          role: u.role || (u.email.toLowerCase() === "yash@gmail.com" ? "merchant" : "customer")
+        }));
+        setUsers(migrated);
+        localStorage.setItem("aura_users", JSON.stringify(migrated));
       } else {
         setUsers(DEFAULT_USERS);
         localStorage.setItem("aura_users", JSON.stringify(DEFAULT_USERS));
@@ -57,12 +64,12 @@ export function AuthProvider({ children }) {
     return { success: false, message: "Invalid credentials. Try yash@gmail.com / 12345678" };
   };
 
-  const register = (name, email, password, location) => {
+  const register = (name, email, password, location, role = "customer") => {
     if (users.some(u => u.email.toLowerCase() === email.toLowerCase())) {
       return { success: false, message: "Email is already registered." };
     }
 
-    const newUser = { name, email, password, location: location || "India" };
+    const newUser = { name, email, password, location: location || "India", role };
     const updatedUsers = [...users, newUser];
     setUsers(updatedUsers);
     localStorage.setItem("aura_users", JSON.stringify(updatedUsers));
@@ -91,6 +98,19 @@ export function AuthProvider({ children }) {
     window.dispatchEvent(new Event("productsUpdated"));
   };
 
+  const updateProfile = (updatedDetails) => {
+    if (!currentUser) return;
+    const updatedUser = { ...currentUser, ...updatedDetails };
+    setCurrentUser(updatedUser);
+    localStorage.setItem("aura_logged_in_user", JSON.stringify(updatedUser));
+    
+    const updatedUsers = users.map(u => 
+      u.email.toLowerCase() === currentUser.email.toLowerCase() ? updatedUser : u
+    );
+    setUsers(updatedUsers);
+    localStorage.setItem("aura_users", JSON.stringify(updatedUsers));
+  };
+
   return (
     <AuthContext.Provider value={{
       currentUser,
@@ -100,7 +120,8 @@ export function AuthProvider({ children }) {
       register,
       logout,
       addMerchantProduct,
-      deleteMerchantProduct
+      deleteMerchantProduct,
+      updateProfile
     }}>
       {children}
     </AuthContext.Provider>

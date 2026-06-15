@@ -26,14 +26,58 @@ function SearchResultsContent() {
 
   useEffect(() => {
     setLoading(true);
-    const lowerQuery = query.toLowerCase().trim();
+    const cleanQuery = query.toLowerCase().trim();
 
-    const matches = products.filter(p => 
-      p.name.toLowerCase().includes(lowerQuery) ||
-      p.brand.toLowerCase().includes(lowerQuery) ||
-      p.category.toLowerCase().includes(lowerQuery) ||
-      (p.gender && p.gender.toLowerCase() === lowerQuery)
-    );
+    let matches = [];
+    if (cleanQuery === "new arrivals" || cleanQuery === "new-arrivals" || cleanQuery === "new arrival") {
+      matches = products.filter(p => p.newArrival);
+    } else if (cleanQuery === "sale" || cleanQuery === "sales" || cleanQuery === "discount" || cleanQuery === "discounts") {
+      matches = products.filter(p => p.bestSeller || p.summerCollection);
+    } else if (cleanQuery) {
+      const queryWords = cleanQuery.split(/\s+/).filter(Boolean);
+      
+      matches = products.filter(p => {
+        // Collect all text from the product to search against
+        const searchTarget = [
+          p.name || "",
+          p.brand || "",
+          p.category || "",
+          p.description || "",
+          p.gender || "",
+          // Custom mapping to cover synonyms and typos
+          (p.category || "").toLowerCase() === "t-shirts" ? "tee t-shirts tshirt tshirts t shirt shirts" : "",
+          (p.category || "").toLowerCase() === "hoodies" ? "hoodie hoodies sweat sweatshirt sweatshirts hood" : "",
+          (p.category || "").toLowerCase() === "trousers" ? "pants trousers cargo cargoes pants trouser pant" : "",
+          (p.category || "").toLowerCase() === "shorts" ? "short shorts walk-shorts" : "",
+          (p.category || "").toLowerCase() === "footwear" ? "shoes footwear shoe sneaker sneakers loafer loafers boots chelsea casual formal" : "",
+          (p.category || "").toLowerCase() === "accessories" ? "accessories accessory bag bags cap caps sunglasses glasses eyewear" : ""
+        ].join(" ").toLowerCase();
+
+        // Check if every query word matches the searchTarget or clean representation
+        return queryWords.every(word => {
+          const cleanWord = word.replace(/[^a-z0-9]/g, "");
+          if (!cleanWord) return false;
+
+          // Special case for short word matching (like "t")
+          if (cleanWord.length <= 2) {
+            if (cleanWord === "t") {
+              return /\bt-size\b/.test(searchTarget) || /\bt-shirts?\b/.test(searchTarget) || /\bt shirts?\b/.test(searchTarget) || /\bt\b/.test(searchTarget);
+            }
+            const regex = new RegExp(`\\b${cleanWord}\\b`);
+            return regex.test(searchTarget);
+          }
+
+          // Special case for "tshirt" to prevent matching "sweatshirt"
+          if (cleanWord === "tshirt" || cleanWord === "tshirts") {
+            return /\bt-shirts?\b/.test(searchTarget) || /\bt shirts?\b/.test(searchTarget) || /\btshirts?\b/.test(searchTarget);
+          }
+
+          return searchTarget.includes(word) || searchTarget.includes(cleanWord);
+        });
+      });
+    } else {
+      matches = products;
+    }
 
     setFiltered(matches);
     setLoading(false);
