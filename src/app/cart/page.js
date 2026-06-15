@@ -6,10 +6,12 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import { useAuth } from "@/context/AuthContext";
+import { useAlert } from "@/context/AlertContext";
 
 export default function CartPage() {
   const router = useRouter();
   const { currentUser } = useAuth();
+  const { showAlert } = useAlert();
   const {
     cart,
     updateQuantity,
@@ -60,8 +62,13 @@ export default function CartPage() {
 
   const handleCheckoutClick = () => {
     if (!currentUser) {
-      alert("Please log in to continue to checkout.");
-      router.push("/login");
+      showAlert("Please log in to continue to checkout.", {
+        title: "Authentication Required",
+        confirmText: "Log In",
+        showCancel: true,
+        onConfirm: () => router.push("/login"),
+        type: "error"
+      });
       return;
     }
     setShowCheckout(true);

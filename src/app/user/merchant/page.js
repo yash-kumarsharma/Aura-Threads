@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
+import { useAlert } from "@/context/AlertContext";
 
 export default function MerchantProfilePage() {
   const {
@@ -15,6 +16,7 @@ export default function MerchantProfilePage() {
   } = useAuth();
   
   const router = useRouter();
+  const { showAlert } = useAlert();
 
   // Redirect to base user page if session drops or they are not a merchant
   useEffect(() => {
@@ -49,7 +51,10 @@ export default function MerchantProfilePage() {
   const handleUploadSubmit = (e) => {
     e.preventDefault();
     if (!previewUrl) {
-      alert("Please upload a product image.");
+      showAlert("Please upload a product image.", {
+        title: "Image Required",
+        type: "error"
+      });
       return;
     }
 

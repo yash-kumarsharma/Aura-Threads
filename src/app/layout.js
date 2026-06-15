@@ -1,6 +1,7 @@
 // src/app/layout.js
 import { CartProvider } from "@/context/CartContext";
 import { AuthProvider } from "@/context/AuthContext";
+import { AlertProvider } from "@/context/AlertContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -25,13 +26,15 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-full flex flex-col bg-offwhite text-charcoal font-sans antialiased">
         <AuthProvider>
-          <CartProvider>
-            <Navbar />
-            <div className="flex-grow">
-              {children}
-            </div>
-            <Footer />
-          </CartProvider>
+          <AlertProvider>
+            <CartProvider>
+              <Navbar />
+              <div className="flex-grow">
+                {children}
+              </div>
+              <Footer />
+            </CartProvider>
+          </AlertProvider>
         </AuthProvider>
       </body>
     </html>
