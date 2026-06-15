@@ -174,7 +174,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-5 flex-1 justify-end text-black">
             {/* Country flag selector */}
             <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-black select-none cursor-pointer">
-              <span className="text-sm">🇺🇸</span>
+              <span className="text-sm">🇮🇳</span>
             </div>
             
             {/* Search Icon */}
