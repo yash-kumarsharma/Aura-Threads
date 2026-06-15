@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32">
+  <!-- Minimalist high-fashion sunglasses silhouette -->
+  <path d="M10,42 L90,42 L87,53 C85,63 76,70 66,70 C57,70 52,63 50,57 C48,63 43,70 34,70 C24,70 15,63 13,53 Z" fill="#000000" />
+  <!-- Subtle reflection/highlight in the lenses -->
+  <path d="M17,47 L43,47 L41,53 C40,59 32,65 27,65 C22,65 18,59 17,53 Z" fill="#FFFFFF" opacity="0.12" />
+  <path d="M57,47 L83,47 L82,53 C81,59 73,65 68,65 C63,65 59,59 58,53 Z" fill="#FFFFFF" opacity="0.12" />
+</svg>
